@@ -1,0 +1,336 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Course Management'
+@UI.headerInfo.typeNamePlural: 'Course Management'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Area'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'AreaDescription'
+annotate view ZC_COURSE_MANAGEMENT000 with
+{
+
+@UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  },
+  {
+    label: 'Content Creator',
+    id: 'ContentCreator',
+    purpose: #STANDARD,
+    position: 11 ,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '__ContentCreator'
+  },
+  {
+    label: 'Faculties',
+    id: 'Faculties',
+    purpose: #STANDARD,
+    position: 12 ,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '__Faculties'
+  },
+  {
+    label: 'Students',
+    id: 'Students',
+    purpose: #STANDARD,
+    position: 13 ,
+    type: #LINEITEM_REFERENCE,
+    targetElement: '_Students'
+  } ]
+
+  @EndUserText.label: 'Course Id'
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'Course Id'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: 'Course Id'
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  CourseId;
+
+  @EndUserText.label: 'Title'
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'Title'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 ,
+    label: 'Title'
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  CourseName;
+
+  @EndUserText.label: 'Description'
+  @UI.identification: [ {
+    position: 30 ,
+    label: 'Description'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 ,
+    label: 'Description'
+  } ]
+  //  @UI.selectionField: [ {
+  //    position: 30
+  //  } ]
+  Description;
+
+  @EndUserText.label: 'Topic'
+//  @UI.identification: [ {
+//    position: 40 ,
+//    label: 'Topic'
+//  } ]
+  @UI.lineItem: [ {
+    position: 50 ,
+    label: 'Topic'
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  Area;
+
+  @EndUserText.label: 'Topic Description'
+//  @UI.identification: [ {
+//    position: 50 ,
+//    label: 'Topic Description'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 50 ,
+//    label: 'Area Description'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 50
+//  } ]
+  AreaDescription;
+
+  @EndUserText.label: 'Course Category'
+//  @UI.identification: [ {
+//    position: 60 ,
+//    label: 'Course Category'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 60 ,
+//    label: 'Course Category'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 60
+//  } ]
+  CourseCategory;
+
+  @EndUserText.label: 'Course Category'
+  @UI.identification: [ {
+    position: 70 ,
+    label: 'Course Category'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 70 ,
+//    label: 'Course Category'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 70
+//  } ]
+  CourseCategoryDescription;
+
+  @EndUserText.label: 'Level'
+//  @UI.identification: [ {
+//    position: 80 ,
+//    label: 'Level'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 40 ,
+//    label: 'Level'
+//  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  Difficulty;
+
+  @EndUserText.label: 'Level'
+  @UI.identification: [ {
+    position: 90 ,
+    label: 'Level'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 ,
+    label: 'Level'
+  } ]
+//  @UI.selectionField: [ {
+//    position: 90
+//  } ]
+  DifficultyDescription;
+
+  @EndUserText.label: 'Type'
+//  @UI.identification: [ {
+//    position: 100 ,
+//    label: 'Type'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 60 ,
+//    label: 'Type'
+//  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  InscriptionType;
+
+  @EndUserText.label: 'Type'
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 ,
+    label: 'Type'
+  } ]
+//  @UI.selectionField: [ {
+//    position: 110
+//  } ]
+  InscriptionTypeDescription;
+
+  @EndUserText.label: 'Tracking'
+  @UI.identification: [ {
+    position: 120 ,
+    label: 'Tracking'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 120 ,
+//    label: 'Tracking'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 120
+//  } ]
+  Tracking;
+
+  @EndUserText.label: 'State'
+  @UI.identification: [ {
+    position: 130 ,
+    label: 'State'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 130 ,
+//    label: 'State'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 130
+//  } ]
+  State;
+
+  @EndUserText.label: 'Requeriments'
+  @UI.identification: [ {
+    position: 140 ,
+    label: 'Requeriments'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 140 ,
+//    label: 'Requeriments'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 140
+//  } ]
+  Requeriments;
+
+  @EndUserText.label: 'Start Date'
+  @UI.identification: [ {
+    position: 150 ,
+    label: 'Start Date'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 150 ,
+//    label: 'Start Date'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 150
+//  } ]
+  StartDate;
+
+  @EndUserText.label: 'End Date'
+  @UI.identification: [ {
+    position: 160 ,
+    label: 'End Date'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 160 ,
+//    label: 'End Date'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 160
+//  } ]
+  EndDate;
+  
+  @EndUserText.label: 'Created by'
+  @UI.identification: [ {
+    position: 170 ,
+    label: 'Created by'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 170 ,
+//    label: 'Created by'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 170
+//  } ]
+  Createdby;
+
+  @EndUserText.label: 'Created at'
+  @UI.identification: [ {
+    position: 180 ,
+    label: 'Created at'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 180 ,
+//    label: 'Created at'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 180
+//  } ]
+  Createdat;
+
+  @EndUserText.label: 'Last changed by'
+  @UI.identification: [ {
+    position: 190 ,
+    label: 'Last changed by'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 190 ,
+//    label: 'Last changed by'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 190
+//  } ]
+  Lastchangedby;
+
+  @EndUserText.label: 'Last changed at'
+  @UI.identification: [ {
+    position: 200 ,
+    label: 'Last changed at'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 200 ,
+//    label: 'Last changed at'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 200
+//  } ]
+  Lastchangedat;
+
+  @EndUserText.label: 'Local last changed'
+//  @UI.identification: [ {
+//    position: 210 ,
+//    label: 'Local last changed'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 210 ,
+//    label: 'Local last changed'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 210
+//  } ]
+  Locallastchanged;
+}

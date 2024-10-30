@@ -1,0 +1,196 @@
+managed implementation in class zbp_i_course_management unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_COURSE_MANAGEMENT alias CourseManagement
+persistent table zacourses
+draft table zacourses_d
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master ( instance )
+{
+  field ( readonly )
+  CourseId,
+  Createdby,
+  Lastchangedby,
+  Lastchangedat,
+  Locallastchanged;
+
+  field ( mandatory : create )
+  CourseName,
+  Description,
+  Area,
+  CourseCategory,
+  Difficulty,
+  InscriptionType;
+
+  field ( numbering : managed )
+  CourseId;
+
+  create;
+  update;
+  delete;
+
+  association __ContentCreator { create; }
+  association __Faculties { create; }
+  association _Students { create; }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zacourses
+    {
+      CourseId         = course_id;
+      CourseName       = course_name;
+      Description      = description;
+      Area             = area;
+      CourseCategory   = course_category;
+      Difficulty       = difficulty;
+      InscriptionType  = inscription_type;
+      Tracking         = tracking;
+      State            = state;
+      Requeriments     = requeriments;
+      StartDate        = start_date;
+      EndDate          = end_date;
+      Createdby        = createdby;
+      Createdat        = createdat;
+      Lastchangedby    = lastchangedby;
+      Lastchangedat    = lastchangedat;
+      Locallastchanged = locallastchanged;
+    }
+
+}
+
+define behavior for ZI_COURSE_CONTENT_CREATORS alias ContentCreators
+persistent table zacourse_users
+draft table zacont_creator_d        //Chino
+etag master Locallastchanged
+lock dependent by _CourseManagement
+authorization dependent by _CourseManagement
+{
+  field ( mandatory : create )
+  UserId;
+  //  Assignment;
+
+//field ( readonly, numbering : managed ) CourseId, UserId; //  Dylan
+
+  field ( readonly )
+  CourseId,
+  Name,
+  Surname,
+  Email,
+  Assignment;
+
+  field ( readonly : update )
+  UserId;
+
+  update;
+  delete;
+
+  association _CourseManagement;
+
+    determination SetDefaultContentCreator on modify { create; }
+
+  mapping for zacourse_users
+    {
+      CourseId         = course_id;
+      Assignment       = assignment;
+      UserId           = user_id;
+      Createdby        = createdby;
+      Createdat        = createdat;
+      Lastchangedby    = lastchangedby;
+      Lastchangedat    = lastchangedat;
+      Locallastchanged = locallastchanged;
+    }
+
+}
+
+define behavior for ZI_COURSE_FACULTIES alias Faculties
+persistent table zacourse_users
+draft table zafaculties_d
+etag master Locallastchanged
+lock dependent by _CourseManagement
+authorization dependent by _CourseManagement
+//late numbering
+{
+  field ( mandatory : create )
+  UserId;
+  //  Assignment;
+
+  field ( readonly )
+  CourseId,
+  Name,
+  Surname,
+  Email,
+  Assignment;
+
+  field ( readonly : update )
+  UserId;
+  //  Assignment;
+
+  update;
+  delete;
+
+  association _CourseManagement;
+
+  determination SetDefaultFacultie on modify { create; } // Dylan
+
+  mapping for zacourse_users
+    {
+      CourseId         = course_id;
+      Assignment       = assignment;
+      UserId           = user_id;
+      Createdby        = createdby;
+      Createdat        = createdat;
+      Lastchangedby    = lastchangedby;
+      Lastchangedat    = lastchangedat;
+      Locallastchanged = locallastchanged;
+    }
+
+}
+
+define behavior for ZI_COURSE_STUDENTS alias Students
+persistent table zacourse_users
+draft table zastudents_d
+etag master Locallastchanged
+lock dependent by _CourseManagement
+authorization dependent by _CourseManagement
+//late numbering
+{
+  field ( mandatory : create )
+  UserId;
+  //  Assignment;
+
+  field ( readonly )
+  CourseId,
+  Name,
+  Surname,
+  Email,
+  Assignment;
+
+  field ( readonly : update )
+  UserId;
+  //  Assignment;
+
+  update;
+  delete;
+
+  association _CourseManagement;
+
+  determination SetDefaultStudent on modify { create; } // Dylan
+
+  mapping for zacourse_users
+    {
+      CourseId         = course_id;
+      Assignment       = assignment;
+      UserId           = user_id;
+      Createdby        = createdby;
+      Createdat        = createdat;
+      Lastchangedby    = lastchangedby;
+      Lastchangedat    = lastchangedat;
+      Locallastchanged = locallastchanged;
+    }
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_AINSC_TYPE'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_AINSC_TYPE'
+  }
+}
+define service ZUI_AINSC_TYPE_O4 provider contracts odata_v4_ui {
+  expose ZC_AINSC_TYPE as InscriptionType;
+}

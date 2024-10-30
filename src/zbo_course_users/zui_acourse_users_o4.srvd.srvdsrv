@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_ACOURSE_USERS'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_ACOURSE_USERS'
+  }
+}
+define service ZUI_ACOURSE_USERS_O4 provider contracts odata_v4_ui {
+  expose ZC_ACOURSE_USERS as CourseUsers;
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_AAREA'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_AAREA'
+  }
+}
+define service ZUI_AAREA_O4 provider contracts odata_v4_ui {
+  expose ZC_AAREA as Area;
+}

@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_ASTATUS unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_ASTATUS alias Status
+persistent table ZASTATUS
+draft table ZASTATUS_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Status;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   Status;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZASTATUS
+  {
+    Status = status;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

@@ -1,0 +1,14 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_COURSE_MANAGEMENT000'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_COURSE_MANAGEMENT000'
+  }
+}
+define service ZUI_COURSE_MANAGEMENT000_O4 provider contracts odata_v4_ui {
+  expose ZC_COURSE_CONTENT_CREATORS000;
+  expose ZC_COURSE_FACULTIES000;
+  expose ZC_COURSE_MANAGEMENT000;
+  expose ZC_COURSE_STUDENTS000;
+}

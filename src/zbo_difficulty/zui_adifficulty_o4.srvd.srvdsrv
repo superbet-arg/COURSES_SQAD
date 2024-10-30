@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_ADIFFICULTY'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_ADIFFICULTY'
+  }
+}
+define service ZUI_ADIFFICULTY_O4 provider contracts odata_v4_ui {
+  expose ZC_ADIFFICULTY as Difficulty;
+}

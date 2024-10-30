@@ -1,0 +1,180 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.typeName: 'Projection CDS View for ZI_COURSE_CONTENT_CREATORS'
+@UI.headerInfo.typeNamePlural: 'Projection CDS View for ZI_COURSE_CONTENT_CREATORS'
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'UserId'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'UserId'
+annotate view ZC_COURSE_CONTENT_CREATORS000 with
+{
+  @EndUserText.label: 'CourseId'
+   @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'CourseId'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 10 , 
+//    label: 'CourseId'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 10 
+//  } ]
+  CourseId;
+  
+  @EndUserText.label: 'UserId'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Enterprise ID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH,
+    label: 'Enterprise ID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  UserId;
+  
+  @EndUserText.label: 'Assignment'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Assignment'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 30 , 
+//    label: 'Assignment'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 30 
+//  } ]
+  Assignment;
+  
+  @EndUserText.label: 'Name'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Name'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Name;
+  
+  @EndUserText.label: 'Surname'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Surname'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Surname'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Surname;
+  
+  @EndUserText.label: 'Email'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Email'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'Email'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  Email;
+  
+  @EndUserText.label: 'Description'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Description'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 70 , 
+//    label: 'Description'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 70 
+//  } ]
+  Description;
+  
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Createdby'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 80 , 
+//    label: 'Createdby'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 80 
+//  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Createdat'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 90 , 
+//    label: 'Createdat'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 90 
+//  } ]
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Lastchangedby'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 100 , 
+//    label: 'Lastchangedby'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 100 
+//  } ]
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Lastchangedat'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 110 , 
+//    label: 'Lastchangedat'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 110 
+//  } ]
+  Lastchangedat;
+  
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'Locallastchanged'
+  } ]
+//  @UI.lineItem: [ {
+//    position: 120 , 
+//    label: 'Locallastchanged'
+//  } ]
+//  @UI.selectionField: [ {
+//    position: 120 
+//  } ]
+  Locallastchanged;
+}

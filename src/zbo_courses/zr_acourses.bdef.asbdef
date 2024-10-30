@@ -1,0 +1,53 @@
+managed implementation in class ZBP_R_ACOURSES unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_ACOURSES alias Courses
+persistent table ZACOURSES
+draft table ZACOURSES_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( readonly )
+   CourseId,
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( numbering : managed )
+   CourseId;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZACOURSES
+  {
+    CourseId = course_id;
+    CourseName = course_name;
+    Description = description;
+    Area = area;
+    CourseCategory = course_category;
+    Difficulty = difficulty;
+    InscriptionType = inscription_type;
+    Tracking = tracking;
+    State = state;
+    Requeriments = requeriments;
+    StartDate = start_date;
+    EndDate = end_date;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

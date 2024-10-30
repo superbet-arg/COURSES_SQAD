@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_ADIFFICULTY unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_ADIFFICULTY alias Difficulty
+persistent table ZADIFFICULTY
+draft table ZADIFFICULTY_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Difficulty;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   Difficulty;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZADIFFICULTY
+  {
+    Difficulty = difficulty;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

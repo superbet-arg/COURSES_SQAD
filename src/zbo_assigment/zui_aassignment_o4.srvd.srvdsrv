@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_AASSIGNMENT'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_AASSIGNMENT'
+  }
+}
+define service ZUI_AASSIGNMENT_O4 provider contracts odata_v4_ui {
+  expose ZC_AASSIGNMENT as Assigment;
+}

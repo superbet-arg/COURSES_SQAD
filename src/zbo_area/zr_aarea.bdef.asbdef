@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_AAREA unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_AAREA alias Area
+persistent table ZAAREA
+draft table ZAAREA_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Area;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   Area;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZAAREA
+  {
+    Area = area;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

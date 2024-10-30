@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_ASTATUS'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_ASTATUS'
+  }
+}
+define service ZUI_ASTATUS_O4 provider contracts odata_v4_ui {
+  expose ZC_ASTATUS as Status;
+}

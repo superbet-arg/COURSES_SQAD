@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_AASSIGNMENT unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_AASSIGNMENT alias Assigment
+persistent table ZAASSIGNMENT
+draft table ZAASSIGNMENT_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Assignment;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   Assignment;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZAASSIGNMENT
+  {
+    Assignment = assignment;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

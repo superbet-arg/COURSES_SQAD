@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_ACOURSE_CAT unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_ACOURSE_CAT alias CourseCategory
+persistent table ZACOURSE_CAT
+draft table ZACOURSE_CAT_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   CourseCategory;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   CourseCategory;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZACOURSE_CAT
+  {
+    CourseCategory = course_category;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}

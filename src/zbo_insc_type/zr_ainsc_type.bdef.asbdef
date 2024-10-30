@@ -1,0 +1,45 @@
+managed implementation in class ZBP_R_AINSC_TYPE unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_AINSC_TYPE alias InscriptionType
+persistent table ZAINSC_TYPE
+draft table ZAINSC_TYPE_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   InscriptionType;
+
+  field ( readonly )
+   Createdby,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( readonly : update )
+   InscriptionType;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZAINSC_TYPE
+  {
+    InscriptionType = inscription_type;
+    Description = description;
+    Createdby = createdby;
+    Createdat = createdat;
+    Lastchangedby = lastchangedby;
+    Lastchangedat = lastchangedat;
+    Locallastchanged = locallastchanged;
+  }
+}
