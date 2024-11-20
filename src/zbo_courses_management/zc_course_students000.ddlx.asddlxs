@@ -7,6 +7,18 @@
 @UI.headerInfo.description.value: 'UserId'
 annotate view ZC_COURSE_STUDENTS000 with
 {
+
+  @EndUserText.label: 'Course User ID'
+//  @UI.identification: [ {
+//    position: 9 , 
+//    label: 'Course User ID'
+//  } ]
+//  @UI.lineItem: [ {
+//    position: 10 , 
+//    label: 'Course User ID'
+//  } ]
+  CourseUsrId;
+  
   @EndUserText.label: 'CourseId'
    @UI.facet: [ {
     label: 'General Information', 

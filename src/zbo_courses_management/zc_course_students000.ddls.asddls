@@ -15,10 +15,14 @@ define view entity ZC_COURSE_STUDENTS000
       @EndUserText: {
         quickInfo: '16 Byte UUID in 16 Bytes (Raw Format)'
       }
-  key CourseId,
+      key CourseUsrId,
+//  key CourseId,
+      CourseId,
       @Consumption.valueHelpDefinition : [ { entity : { name : 'ZUSERS_VH', element : 'UserId' } } ]
-  key UserId,
-  key Assignment,
+//  key UserId,
+      UserId,
+//  key Assignment,
+      Assignment,
       Name,
       Surname,
       Email,

@@ -21,7 +21,7 @@ authorization master( global )
    Locallastchanged;
 
   field ( numbering : managed )
-   CourseId;
+   CourseUsrId;
 
   field ( readonly : update )
    UserId,

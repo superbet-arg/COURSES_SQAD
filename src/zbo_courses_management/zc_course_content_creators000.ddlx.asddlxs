@@ -7,6 +7,9 @@
 @UI.headerInfo.description.value: 'UserId'
 annotate view ZC_COURSE_CONTENT_CREATORS000 with
 {
+  @EndUserText.label: 'Course User ID'
+  CourseUsrId;
+  
   @EndUserText.label: 'CourseId'
    @UI.facet: [ {
     label: 'General Information', 
@@ -19,13 +22,6 @@ annotate view ZC_COURSE_CONTENT_CREATORS000 with
     position: 10 , 
     label: 'CourseId'
   } ]
-//  @UI.lineItem: [ {
-//    position: 10 , 
-//    label: 'CourseId'
-//  } ]
-//  @UI.selectionField: [ {
-//    position: 10 
-//  } ]
   CourseId;
   
   @EndUserText.label: 'UserId'
@@ -38,9 +34,6 @@ annotate view ZC_COURSE_CONTENT_CREATORS000 with
     importance: #HIGH,
     label: 'Enterprise ID'
   } ]
-  @UI.selectionField: [ {
-    position: 10 
-  } ]
   UserId;
   
   @EndUserText.label: 'Assignment'
@@ -48,15 +41,8 @@ annotate view ZC_COURSE_CONTENT_CREATORS000 with
     position: 30 , 
     label: 'Assignment'
   } ]
-//  @UI.lineItem: [ {
-//    position: 30 , 
-//    label: 'Assignment'
-//  } ]
-//  @UI.selectionField: [ {
-//    position: 30 
-//  } ]
   Assignment;
-  
+
   @EndUserText.label: 'Name'
   @UI.identification: [ {
     position: 40 , 
@@ -65,9 +51,6 @@ annotate view ZC_COURSE_CONTENT_CREATORS000 with
   @UI.lineItem: [ {
     position: 20 , 
     label: 'Name'
-  } ]
-  @UI.selectionField: [ {
-    position: 20 
   } ]
   Name;
   
@@ -80,9 +63,6 @@ annotate view ZC_COURSE_CONTENT_CREATORS000 with
     position: 30 , 
     label: 'Surname'
   } ]
-  @UI.selectionField: [ {
-    position: 30 
-  } ]
   Surname;
   
   @EndUserText.label: 'Email'
@@ -93,9 +73,6 @@ annotate view ZC_COURSE_CONTENT_CREATORS000 with
   @UI.lineItem: [ {
     position: 40 , 
     label: 'Email'
-  } ]
-  @UI.selectionField: [ {
-    position: 40 
   } ]
   Email;
   

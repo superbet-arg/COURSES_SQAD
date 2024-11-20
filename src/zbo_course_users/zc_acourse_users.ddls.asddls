@@ -2,12 +2,16 @@
 @EndUserText.label: '###GENERATED Core Data Service Entity'
 @AccessControl.authorizationCheck: #CHECK
 define root view entity ZC_ACOURSE_USERS
-  provider contract TRANSACTIONAL_QUERY
+  provider contract transactional_query
   as projection on ZR_ACOURSE_USERS
 {
-  key UserId,
-  key Assignment,
-  key CourseId,
+  key CourseUsrId,
+//  key UserId,
+      UserId,
+//  key Assignment,
+      Assignment,
+//  key CourseId,
+      CourseId,
   Createdby,
   Createdat,
   Lastchangedby,

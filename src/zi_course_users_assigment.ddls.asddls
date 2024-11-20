@@ -12,9 +12,13 @@ define view entity ZI_COURSE_USERS_ASSIGMENT
   association [1..1] to ZR_AUSERS      as _Users     on _Users.UserId = $projection.UserId
   association [1..1] to ZR_AASSIGNMENT as _Assigment on _Assigment.Assignment = $projection.Assignment
 {
-  key UserId,
-  key Assignment,
-  key CourseId,
+  key CourseUsrId,
+//  key UserId,
+      UserId,
+//  key Assignment,
+      Assignment,
+//  key CourseId,
+      CourseId,
       Createdby,       
       Createdat,
       Lastchangedby,

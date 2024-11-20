@@ -2,11 +2,15 @@
 @Metadata.allowExtensions: true
 @EndUserText.label: '###GENERATED Core Data Service Entity'
 define root view entity ZR_ACOURSE_USERS
-  as select from ZACOURSE_USERS as CourseUsers
+  as select from zacourse_users as CourseUsers
 {
-  key user_id as UserId,
-  key assignment as Assignment,
-  key course_id as CourseId,
+  key course_usr_id as CourseUsrId,
+//  key UserId,
+      user_id as UserId,
+//  key Assignment,
+      assignment as Assignment,
+//  key CourseId,
+      course_id as CourseId,
   @Semantics.user.createdBy: true
   createdby as Createdby,
   createdat as Createdat,

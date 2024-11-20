@@ -11,9 +11,13 @@ define view entity ZI_COURSE_STUDENTS
   as select from ZI_COURSE_USERS_ASSIGMENT
   association to parent ZI_COURSE_MANAGEMENT as _CourseManagement on _CourseManagement.CourseId = $projection.CourseId
 {
-  key CourseId,
-  key UserId,
-  key Assignment,
+  key CourseUsrId,
+//  key UserId,
+      UserId,
+//  key Assignment,
+      Assignment,
+//  key CourseId,
+      CourseId,
       Name,
       Surname,
       Email,

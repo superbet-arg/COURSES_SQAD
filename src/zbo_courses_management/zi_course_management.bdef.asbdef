@@ -71,13 +71,18 @@ etag master Locallastchanged
 lock dependent by _CourseManagement
 authorization dependent by _CourseManagement
 {
+
+  field ( numbering : managed )
+  CourseUsrId;
+
   field ( mandatory : create )
   UserId;
   //  Assignment;
 
-//field ( readonly, numbering : managed ) CourseId, UserId; //  Dylan
+  //field ( readonly, numbering : managed ) CourseId, UserId; //  Dylan
 
   field ( readonly )
+  CourseUsrId,
   CourseId,
   Name,
   Surname,
@@ -92,10 +97,13 @@ authorization dependent by _CourseManagement
 
   association _CourseManagement;
 
-    determination SetDefaultContentCreator on modify { create; }
+  determination SetDefaultContentCreator on modify { create; }
+
+  validation validateContentUser on save { create; field CourseUsrId, CourseId, UserId, Assignment; }
 
   mapping for zacourse_users
     {
+      CourseUsrId      = course_usr_id;
       CourseId         = course_id;
       Assignment       = assignment;
       UserId           = user_id;
@@ -107,7 +115,6 @@ authorization dependent by _CourseManagement
     }
 
 }
-
 define behavior for ZI_COURSE_FACULTIES alias Faculties
 persistent table zacourse_users
 draft table zafaculties_d
@@ -116,16 +123,22 @@ lock dependent by _CourseManagement
 authorization dependent by _CourseManagement
 //late numbering
 {
+
+  field ( numbering : managed )
+  CourseUsrId;
+
   field ( mandatory : create )
   UserId;
   //  Assignment;
 
   field ( readonly )
+  CourseUsrId,
   CourseId,
   Name,
   Surname,
   Email,
   Assignment;
+
 
   field ( readonly : update )
   UserId;
@@ -138,8 +151,11 @@ authorization dependent by _CourseManagement
 
   determination SetDefaultFacultie on modify { create; } // Dylan
 
+  validation validateFacultytUser on save { create; field CourseUsrId, CourseId, UserId, Assignment; }
+
   mapping for zacourse_users
     {
+      CourseUsrId      = course_usr_id;
       CourseId         = course_id;
       Assignment       = assignment;
       UserId           = user_id;
@@ -150,7 +166,10 @@ authorization dependent by _CourseManagement
       Locallastchanged = locallastchanged;
     }
 
+  //  static action createF parameter ZDMO_F_TEST result [1] $self; //Chino
+
 }
+
 
 define behavior for ZI_COURSE_STUDENTS alias Students
 persistent table zacourse_users
@@ -160,11 +179,16 @@ lock dependent by _CourseManagement
 authorization dependent by _CourseManagement
 //late numbering
 {
+
+  field ( numbering : managed )
+  CourseUsrId;
+
   field ( mandatory : create )
   UserId;
   //  Assignment;
 
   field ( readonly )
+  CourseUsrId,
   CourseId,
   Name,
   Surname,
@@ -182,8 +206,11 @@ authorization dependent by _CourseManagement
 
   determination SetDefaultStudent on modify { create; } // Dylan
 
+  validation validateStudentUser on save { create; field CourseUsrId, CourseId, UserId, Assignment; }
+
   mapping for zacourse_users
     {
+      CourseUsrId      = course_usr_id;
       CourseId         = course_id;
       Assignment       = assignment;
       UserId           = user_id;
